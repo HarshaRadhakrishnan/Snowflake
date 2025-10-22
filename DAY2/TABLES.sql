@@ -1,0 +1,23 @@
+USE MY_PRACTICE_DB;
+CREATE OR REPLACE SCHEMA MY_PRACTICE_DB.MY_SCHEMA1;
+CREATE OR REPLACE TABLE orders (
+    order_id INT,
+    order_date DATE
+);
+
+CREATE OR REPLACE TEMPORARY TABLE temp_orders (
+    order_id INT,
+    total_amount NUMBER(10,2)
+);
+
+
+CREATE OR REPLACE TRANSIENT TABLE staging_orders (
+    order_id INT,
+    order_status STRING
+);
+
+SHOW TABLES IN SCHEMA MY_PRACTICE_DB.MY_SCHEMA1;
+
+ALTER TABLE orders SET DATA_RETENTION_TIME_IN_DAYS = 7;
+
+
